@@ -162,12 +162,12 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50px;
+  width: 81px;
 }
 
 .theme-index {
   display: flex;
-  gap: 6px;
+  gap: 19px;
 }
 .theme-index span {
   cursor: pointer;
