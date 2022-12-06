@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon-32x32.png">
+    <title>Calculator</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main StyleSheet -->
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body class="contrast">
+    <div class="container">
+      <div class="header">
+        <h3 style="font-size: 30px">calc</h3>
+        <div class="parent">
+          <small>THEME</small>
+          <div class="change-theme">
+            <div class="theme-index">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </div>
+            <div class="track">
+              <div class="thumb"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input type="text" readonly class="screen"></input>
+      <div class="buttons">
+        <div class="keys-body">
+          <div class="main-keys">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>.</button>
+            <button>0</button>
+            <button>/</button>
+          </div>
+          <div class="side-keys">
+            <button class="special">DEL</button>
+            <button>+</button>
+            <button>-</button>
+            <button>x</button>
+          </div>
+        </div>
+        <div class="footer-keys">
+          <button class="special">RESET</button>
+          <button class="equal" data-e="true">=</button>
+        </div>
+      </div>
+    </div>
+    <script src="assets/main.js"></script>
+  </body>
+</html>

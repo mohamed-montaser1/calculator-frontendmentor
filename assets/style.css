@@ -1,0 +1,312 @@
+:root {
+  --main-bg: hsl(222, 26%, 31%);
+  --keypad-bg: hsl(223, 31%, 20%);
+  --screen-bg: hsl(224, 36%, 15%);
+  --key-bg: hsl(30, 25%, 89%);
+  --key-shadow: hsl(28, 16%, 65%);
+  --special-key: hsl(225, 21%, 49%);
+  --special-key-shadow: hsl(224, 28%, 35%);
+  --equal-bg: hsl(6, 63%, 50%);
+  --equal-bg-shadow: hsl(6, 70%, 34%);
+
+  /* light theme */
+  --main-bg-light: hsl(0, 0%, 90%);
+  --keypad-bg-light: hsl(0, 5%, 81%);
+  --special-bg-light: hsl(185, 42%, 37%);
+  --equal-bg-light: hsl(25, 98%, 40%);
+  --equal-bg-shadow-light: hsl(25, 99%, 27%);
+  --key-bg-light: hsl(45, 7%, 89%);
+  --key-shadow-light: hsl(35, 11%, 61%);
+
+  /* contrast theme */
+  --main-bg-contrast: hsl(268, 75%, 9%);
+  --keypad-bg-contrast: hsl(268, 71%, 12%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.container {
+  width: 507px;
+}
+
+.container button {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 25px;
+  height: 60px;
+  font-weight: 600;
+}
+
+.container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  color: white;
+}
+
+.container .header small {
+  font-size: 10px;
+}
+
+.container .screen {
+  width: 90%;
+  height: 90px;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-bottom: 23px;
+  font-size: 43px;
+  padding: 20px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  border: none;
+  outline: none;
+}
+
+.container .buttons {
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 20px;
+  height: 462px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .buttons .keys-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80%;
+}
+
+.container .buttons .keys-body .main-keys {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 75%;
+  height: 100%;
+  gap: 21px;
+}
+
+.container .buttons .keys-body .side-keys {
+  display: grid;
+  height: 100%;
+  row-gap: 10px;
+  width: 19%;
+}
+
+.footer-keys {
+  margin: 27px auto;
+  width: 100%;
+  height: 71px;
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 20px;
+}
+
+@media (max-width: 378px) {
+  .container {
+    width: 98%;
+  }
+  .container .screen {
+    width: 100%;
+  }
+  .container .buttons {
+    width: 100%;
+  }
+  .container .header {
+    width: 100%;
+  }
+  .container .main-keys {
+    gap: 7px !important;
+  }
+  .container .buttons button {
+    font-size: 13px;
+  }
+}
+
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.change-theme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+
+.theme-index {
+  display: flex;
+  gap: 6px;
+}
+.theme-index span {
+  cursor: pointer;
+}
+
+.track {
+  width: 100%;
+  height: 22px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4px;
+}
+
+body.dark .track {
+  background-color: var(--keypad-bg);
+}
+
+.thumb {
+  background-color: var(--equal-bg);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+body.dark {
+  background-color: var(--main-bg);
+}
+
+body.dark .container .special {
+  background-color: var(--special-key);
+  border-bottom: 3px solid var(--special-key-shadow);
+  color: white;
+}
+
+body.dark .container .equal {
+  background-color: var(--equal-bg);
+  border-bottom: 3px solid var(--equal-bg-shadow);
+  color: white;
+}
+
+body.dark .container button {
+  background-color: var(--key-bg);
+  border-bottom: 3px solid var(--key-shadow);
+  color: hsl(221, 14%, 31%);
+}
+
+body.dark .container .screen {
+  background-color: var(--screen-bg);
+  color: white;
+}
+
+body.dark .container .buttons {
+  background: var(--keypad-bg);
+}
+
+body.light {
+  background-color: var(--main-bg-light);
+}
+body.light .header {
+  color: hsl(60, 10%, 19%);
+}
+body.light .container .special {
+  background-color: var(--special-bg-light);
+  border-bottom: 3px solid var(--special-key-shadow);
+  color: white !important;
+}
+
+body.light .container .equal {
+  background-color: var(--equal-bg-light);
+  border-bottom: 3px solid var(--equal-bg-shadow);
+  color: white !important;
+}
+
+body.light .container button {
+  background-color: var(--key-bg);
+  border-bottom: 3px solid var(--key-shadow);
+  color: hsl(221, 14%, 31%);
+}
+
+body.light .container .screen {
+  background-color: white;
+  color: hsl(60, 10%, 19%);
+}
+
+body.light .container .buttons {
+  background: var(--keypad-bg-light);
+}
+
+body.light .container .buttons button {
+  color: hsl(60, 10%, 19%);
+}
+
+body.light .track {
+  background-color: var(--keypad-bg-light);
+}
+
+body.contrast {
+  background-color: var(--main-bg-contrast);
+}
+body.contrast .header {
+  color: hsl(52, 100%, 62%);
+}
+body.contrast .container .special {
+  background-color: hsl(281, 89%, 26%);
+  border-bottom: 3px solid hsl(285, 91%, 52%);
+  color: white !important;
+}
+
+body.contrast .container .equal {
+  background-color: hsl(176, 100%, 44%);
+  border-bottom: 3px solid hsl(177, 92%, 70%);
+  color: white !important;
+}
+
+body.contrast .container button {
+  background-color: hsl(268, 47%, 21%);
+  border-bottom: 3px solid hsl(290, 70%, 36%);
+  color: hsl(52, 100%, 62%) !important;
+}
+
+body.contrast .container .screen {
+  background-color: var(--keypad-bg-contrast);
+  color: hsl(52, 100%, 62%) !important;
+}
+
+body.contrast .container .buttons {
+  background: var(--keypad-bg-contrast);
+}
+
+body.contrast .container .buttons button {
+  color: hsl(60, 10%, 19%);
+}
+
+body.contrast .track {
+  background-color: var(--keypad-bg-contrast);
+}
+body.contrast .track .thumb {
+  background-color: hsl(176, 100%, 44%);
+}
