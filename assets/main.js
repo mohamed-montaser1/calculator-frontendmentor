@@ -1,8 +1,12 @@
 const all_buttons = document.querySelectorAll(".buttons button");
+const all_num_btns = document.querySelectorAll(".main-keys button");
 const screen = document.querySelector(".screen");
-
+const resetBtn = document.querySelector("#clear");
+var ans = "";
+let opr = ["*", "/", "+", "-"];
 const result = () => {
-  return eval(screen.value);
+  ans = eval(screen.value);
+  return ans;
 };
 
 for (let i = 0; i < all_buttons.length; i++) {
@@ -11,15 +15,29 @@ for (let i = 0; i < all_buttons.length; i++) {
     let clicked_btn_val = all_buttons[i].innerHTML;
 
     if (clicked_btn.dataset.e) {
-      screen.value = result();
+      if (screen.value !== "") {
+        screen.value = result();
+        document.body.dataset.clicked = true;
+      }
     } else if (clicked_btn_val == "x") {
       screen.value += "*";
     } else if (clicked_btn_val === "RESET") {
       screen.value = "";
-    } else if (clicked_btn_val !== "DEL") {
-      screen.value += clicked_btn_val;
     } else if (clicked_btn_val === "DEL") {
       screen.value = screen.value.slice(0, -1);
+    } else {
+      // this function check if you have already anser
+      if (ans !== "" && screen.value == ans) {
+        if (!opr.includes(clicked_btn_val)) {
+          ans = "";
+          screen.value = "";
+          screen.value += clicked_btn_val;
+        } else {
+          screen.value += clicked_btn_val;
+        }
+      } else {
+        screen.value += clicked_btn_val;
+      }
     }
   });
 }
